@@ -21,14 +21,17 @@ function decide_on_item(item)
       table.insert(possible,k)
     end
   end
+  --find the total value count
   total = 0
   for k,v in ipairs(possible) do
     total = total + v
   end
+  --get a random item, note that sometimes there isn't an item chosen (on purpose)
   for k,v in ipairs(possible) do
     if math.random() < (v / total) then
       return k
     end
   end
+  --last resort: no item
   return ""
 end

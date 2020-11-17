@@ -1,4 +1,3 @@
---unfinished
 --create and init the item values, note that bigger number is rarer.
 value = {}
 value["diamond"] = 150
@@ -26,4 +25,10 @@ function decide_on_item(item)
   for k,v in ipairs(possible) do
     total = total + v
   end
+  for k,v in ipairs(possible) do
+    if math.random() < (v / total) then
+      return k
+    end
+  end
+  return ""
 end

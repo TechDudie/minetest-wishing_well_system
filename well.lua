@@ -7,20 +7,7 @@ value["crystalized diamond"] = 50
 value["entropy crystal"] = 25
 possible = {}
 math.randomseed(os.time())
-function tablelength(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
-end
 function decide_on_item(item)
-  --find the matching item
-  for k,v in ipairs(value) do
-    if k == item then
-      --make note of the item value
-      itemval = v
-      table.insert(possible,k)
-    end
-  end
   --find the total value count
   total = 0
   for k,v in ipairs(possible) do
